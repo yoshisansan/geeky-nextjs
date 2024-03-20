@@ -7,7 +7,7 @@ banner:
   image: /images/banner-author.png
   button:
     enable: true
-    label: このサイトについて
+    label: 縺ゅ＞縺�∴縺
     link: /about
     rel: ""
 
