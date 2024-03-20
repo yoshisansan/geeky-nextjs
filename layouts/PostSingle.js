@@ -96,7 +96,9 @@ const PostSingle = ({
                   <InnerPagination posts={posts} date={date} />
                 )}
               </article>
-              <div className="mt-16">
+              
+              <div className="m-8"></div> {/* コメント機能実装するまで*/}
+              {/* <div className="mt-16">
                 {disqus.enable && (
                   <DiscussionEmbed
                     key={theme}
@@ -104,7 +106,7 @@ const PostSingle = ({
                     config={disqusConfig}
                   />
                 )}
-              </div>
+              </div> */}
             </div>
             <Sidebar
               posts={posts.filter((post) => post.slug !== slug)}
