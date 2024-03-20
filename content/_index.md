@@ -7,7 +7,7 @@ banner:
   image: /images/banner-author.png
   button:
     enable: true
-    label: Know About Me
+    label: このサイトについて
     link: /about
     rel: ""
 

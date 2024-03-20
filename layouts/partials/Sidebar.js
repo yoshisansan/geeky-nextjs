@@ -15,7 +15,6 @@ const { blog_folder } = config.settings;
 const { about, featured_posts, newsletter } = config.widgets;
 
 const Sidebar = ({ posts, categories, className }) => {
-  console.log(newsletter);
   const sortPostByDate = sortByDate(posts);
   const featuredPosts = sortPostByDate.filter(
     (post) => post.frontmatter.featured
@@ -139,7 +138,7 @@ const Sidebar = ({ posts, categories, className }) => {
                       </h3>
                       <p className="inline-flex items-center font-secondary text-xs">
                         <FaRegCalendar className="mr-1.5" />
-                        {dateFormat(addYears(post.frontmatter.date, 72))}
+                        {dateFormat(addYears(post.frontmatter.date, 70))}
                       </p>
                     </div>
                   </div>
