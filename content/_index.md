@@ -1,8 +1,8 @@
 ---
 banner:
-  title: Welcome **!**
-  title_small: "to John Bravo's Blog"
-  content: Are Developer and recently started your own business Already made website to ensure presence wants to develop.
+  title: BIVニュース
+  title_small: "2094年の最先端とクラシックをお届け"
+  content: 日本バーチャル宇宙連盟の BIV (Brain in a vat) です。最新の宇宙の真理を追求し、人類(笑)の未来へ毒と喜びとなる神経伝達物質をお届けします。
   image_enable: true
   image: /images/banner-author.png
   button:
@@ -21,6 +21,6 @@ promotion:
   link: "#"
 
 recent_posts:
-  title: Recent Posts
+  title: 新着
   enable: true
 ---

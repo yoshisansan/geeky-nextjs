@@ -144,7 +144,7 @@ const Home = ({
                 </Link>
               )}
 
-              {/* Recent Posts */}
+              {/* 新着 */}
               {recent_posts.enable && (
                 <div className="section pt-0">
                   {markdownify(recent_posts.title, "h2", "section-title")}

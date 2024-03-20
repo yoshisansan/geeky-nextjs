@@ -2,7 +2,7 @@
 title: "『電脳マツコ、未来キッチンで「味覚バグ」を起こす』"
 date: 2024-03-20T01:00:00Z
 image: /images/post/post-1.png
-categories: ["programming"]
+categories: ["芸能"]
 featured: true
 draft: false
 ---

@@ -31,14 +31,14 @@ const Pagination = ({ section, currentPage, totalPages }) => {
             >
               <>
                 <BsArrowLeftShort />
-                <span className="ml-3 text-lg ">Previous</span>
+                <span className="ml-3 text-lg ">前</span>
               </>
             </Link>
           ) : (
             <span className="flex items-center rounded-full px-2 py-1 text-3xl font-bold text-dark dark:text-darkmode-light ">
               <>
                 <BsArrowLeftShort />
-                <span className="ml-3 text-lg">Previous</span>
+                <span className="ml-3 text-lg">前</span>
               </>
             </span>
           )}
@@ -77,14 +77,14 @@ const Pagination = ({ section, currentPage, totalPages }) => {
               className="ml-4 flex items-center rounded-full px-2 py-1 text-3xl font-bold leading-none text-dark dark:text-darkmode-light"
             >
               <>
-                <span className="mr-3 text-lg">Next</span>
+                <span className="mr-3 text-lg">次</span>
                 <BsArrowRightShort />
               </>
             </Link>
           ) : (
             <span className="ml-4 flex items-center rounded-full px-2 py-1 text-3xl font-bold text-dark dark:text-darkmode-light">
               <>
-                <span className="mr-3 text-lg">Next</span>
+                <span className="mr-3 text-lg">次</span>
                 <BsArrowRightShort />
               </>
             </span>

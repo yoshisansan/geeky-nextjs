@@ -11,22 +11,21 @@ const InnerPagination = ({ posts, date }) => {
   const prev =
     postIndex == lastIndex ? undefined : orderedPosts[postIndex + 1].slug;
   const prevButton = prev && (
-    <Link href={prev} className={"btn btn-primary"}>
-      Prev
+    <Link href={prev} className="btn btn-outline-primary" style={{ minWidth: '100px', whiteSpace: 'nowrap', margin: '0 2px' }}>
+    ＜ 前のページ 
     </Link>
   );
   const nextButton = next && (
-    <Link href={next} className={"btn btn-primary"}>
-      Next
+    <Link href={next} className={"btn btn-primary"}　style={{ minWidth: '100px', whiteSpace: 'nowrap', margin: '0 2px'}}>
+      次のページ ＞
     </Link>
   );
 
   return (
-    <div className="row">
-      <span className="col">{prevButton}</span>
-      <span className="col-8" />
-      <span className="col">{nextButton}</span>
-    </div>
+  <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap'  }}>
+    <span>{prevButton}</span>
+    <span>{nextButton}</span>
+  </div>
   );
 };
 
