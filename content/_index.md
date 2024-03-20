@@ -13,7 +13,7 @@ banner:
 
 featured_posts:
   enable: true
-  title: Featured Posts
+  title: 注目の記事
 
 promotion:
   enable: true
@@ -23,5 +23,4 @@ promotion:
 recent_posts:
   title: Recent Posts
   enable: true
-
 ---

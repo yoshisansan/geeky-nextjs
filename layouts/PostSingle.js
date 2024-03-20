@@ -1,7 +1,7 @@
 import config from "@config/config.json";
 import Base from "@layouts/Baseof";
 import InnerPagination from "@layouts/components/InnerPagination";
-import dateFormat from "@lib/utils/dateFormat";
+import dateFormat, { addYears } from "@lib/utils/dateFormat";
 import { markdownify } from "@lib/utils/textConverter";
 import { DiscussionEmbed } from "disqus-react";
 import { MDXRemote } from "next-mdx-remote";
@@ -86,7 +86,7 @@ const PostSingle = ({
                   </li>
                   <li className="inline-flex items-center font-secondary text-xs leading-3">
                     <FaRegCalendar className="mr-1.5" />
-                    {dateFormat(date)}
+                    {dateFormat(addYears(date, 72))}
                   </li>
                 </ul>
                 <div className="content mb-16">

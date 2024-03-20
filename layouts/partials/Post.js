@@ -1,6 +1,6 @@
 import config from "@config/config.json";
 import ImageFallback from "@layouts/components/ImageFallback";
-import dateFormat from "@lib/utils/dateFormat";
+import dateFormat, { addYears } from "@lib/utils/dateFormat";
 import Link from "next/link";
 import { FaRegCalendar, FaUserAlt } from "react-icons/fa";
 
@@ -56,7 +56,7 @@ const Post = ({ post }) => {
         </li>
         <li className="inline-flex items-center font-secondary text-xs leading-3">
           <FaRegCalendar className="mr-1.5" />
-          {dateFormat(post.frontmatter.date)}
+          {dateFormat(addYears(post.frontmatter.date, 72))}
         </li>
       </ul>
       <p>{post.content.slice(0, Number(summary_length))}</p>

@@ -6,7 +6,7 @@ import Post from "@layouts/partials/Post";
 import Sidebar from "@layouts/partials/Sidebar";
 import { getListPage, getSinglePage } from "@lib/contentParser";
 import { getTaxonomy } from "@lib/taxonomyParser";
-import dateFormat from "@lib/utils/dateFormat";
+import dateFormat, { addYears } from "@lib/utils/dateFormat";
 import { sortByDate } from "@lib/utils/sortFunctions";
 import { markdownify } from "@lib/utils/textConverter";
 import Link from "next/link";
@@ -80,7 +80,7 @@ const Home = ({
         <div className="container">
           <div className="row items-start">
             <div className="mb-12 lg:mb-0 lg:col-8">
-              {/* Featured posts */}
+              {/* 注目の記事 */}
               {featured_posts.enable && (
                 <div className="section">
                   {markdownify(featured_posts.title, "h2", "section-title")}
@@ -120,7 +120,7 @@ const Home = ({
                                 </h3>
                                 <p className="inline-flex items-center font-bold">
                                   <FaRegCalendar className="mr-1.5" />
-                                  {dateFormat(post.frontmatter.date)}
+                                  {dateFormat(addYears(post.frontmatter.date, 72))}
                                 </p>
                               </div>
                             </div>

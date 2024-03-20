@@ -4,7 +4,7 @@ import ImageFallback from "@layouts/components/ImageFallback";
 import Logo from "@layouts/components/Logo";
 import CustomForm from "@layouts/components/NewsLetterForm";
 import Social from "@layouts/components/Social";
-import dateFormat from "@lib/utils/dateFormat";
+import dateFormat, { addYears } from "@lib/utils/dateFormat";
 import { sortByDate } from "@lib/utils/sortFunctions";
 import { markdownify } from "@lib/utils/textConverter";
 import Link from "next/link";
@@ -15,6 +15,7 @@ const { blog_folder } = config.settings;
 const { about, featured_posts, newsletter } = config.widgets;
 
 const Sidebar = ({ posts, categories, className }) => {
+  console.log(newsletter);
   const sortPostByDate = sortByDate(posts);
   const featuredPosts = sortPostByDate.filter(
     (post) => post.frontmatter.featured
@@ -88,7 +89,7 @@ const Sidebar = ({ posts, categories, className }) => {
       {/* featured widget */}
       {featured_posts.enable && (
         <div className="mt-6 rounded border border-border p-6 dark:border-darkmode-border">
-          <h4 className="section-title mb-12 text-center">Featured</h4>
+          <h4 className="section-title mb-12 text-center">注目の記事</h4>
           <div className="mb-12 flex items-center justify-center">
             <button
               className={`btn px-5 py-2 ${
@@ -96,7 +97,7 @@ const Sidebar = ({ posts, categories, className }) => {
               }`}
               onClick={() => setShowRecent(false)}
             >
-              Featured
+              特集
             </button>
             <button
               className={`btn ml-3  px-5 py-2 ${
@@ -104,7 +105,7 @@ const Sidebar = ({ posts, categories, className }) => {
               }`}
               onClick={() => setShowRecent(true)}
             >
-              Recent
+              新着
             </button>
           </div>
           {showRecent
@@ -138,7 +139,7 @@ const Sidebar = ({ posts, categories, className }) => {
                       </h3>
                       <p className="inline-flex items-center font-secondary text-xs">
                         <FaRegCalendar className="mr-1.5" />
-                        {dateFormat(post.frontmatter.date)}
+                        {dateFormat(addYears(post.frontmatter.date, 72))}
                       </p>
                     </div>
                   </div>
