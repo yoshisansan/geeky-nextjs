@@ -1,0 +1,15 @@
+{
+    //コンパイルオプション
+    "compilerOptions": {
+      "baseUrl": ".",
+      "target": "ESNext",
+      "lib": ["dom", "dom.iterable", "esnext"],
+      //厳格なチェックを行う(省略値はfalse)
+      "strict": true,
+      //暗黙のany型の使用を許可したい時falseとする(strict=trueの時の省略値はtrueのため)
+      "noImplicitAny": true,
+      //JavaScriptファイルを作成しない(コンパイルチェックのみ行いたい時true)
+      "noEmit": true
+    },
+    "include": ["**/**/*.ts"],
+  }
