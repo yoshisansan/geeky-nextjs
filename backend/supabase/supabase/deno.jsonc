@@ -1,0 +1,111 @@
+// 注：全てoptionalなプロパティ（指定してもしなくてもよい）
+// 基本的にはデフォルト設定で動作するので記述不要。
+{
+  // tsconfig.jsonのcompilerOptionsに相当
+  "compilerOptions": {
+    "allowJs": true,
+    "lib": ["deno.window"],
+    "strict": true
+    // ...etc
+  },
+
+  // import-mapのimportsプロパティに相当
+  // "imports": {
+  //   // (例)
+  //   "lodash": "https://esm.sh/lodash@4.17.21"
+  // },
+
+  // import-mapのscopesプロパティに相当
+  "scopes": {
+    "https://deno.land/x/example/": {
+      "https://deno.land/std@0.177.0/": "./patched/"
+    }
+  },
+
+  // 外部ファイルのimport-mapを使用したい場合に指定する
+  // コマンドラインフラグに`--import-map=<FILE>`が渡された場合は、その値で上書きされる
+  "importMap": "./functions/import_map.json",
+
+  // deno taskコマンド設定
+  "tasks": {
+    // (例) `deno task task_name`を実行すると`echo 1`が走る
+    "task_name": "echo 1"
+  },
+
+  // deno lintコマンド設定
+  "lint": {
+    // lint対象に含めるファイル
+    "include": ["./functions/"],
+
+    // lint対象から除外するファイル
+    "exclude": ["./exclude/"],
+
+    // lint対象のルールを指定する
+    "rules": {
+      "tags": ["recommended"], // ベースのルールセット (デフォルトは"recommended")
+      "include": ["ban-untagged-todo"], // tagsで指定したルールに対して追加したいルール
+      "exclude": ["no-unused-vars"] // tagsで指定したルールに対して除外したいルール
+      // ルール名は https://lint.deno.land/ を参照
+    },
+
+    // 結果の表示形式
+    "report": "pretty" // デフォルト
+    // "report": "compact" // 省略形
+    // "report": "json" // JSON形式
+  },
+
+  // deno fmtコマンド設定
+  "fmt": {
+    // フォーマット対象に含めるファイル
+    "include": ["./functions/"],
+
+    // フォーマット対象から除外するファイル
+    "exclude": ["./exclude/"],
+
+    // インデント幅
+    "indentWidth": 2,
+
+    // 1行当たりの文字数
+    "lineWidth": 80,
+
+    // 行末にセミコロンを付加するかどうか
+    "semiColons": true,
+
+    // 引用符にシングルクォーテーションとダブルクォーテーションのどちらを使用するか
+    "singleQuote": false,
+
+    // インデントにスペースとタブのどちらを使用するか
+    "useTabs": false,
+
+    // Markdownファイル内での文章の改行方法
+    "proseWrap": "always" // 文章をlineWidth幅で改行する (デフォルト)
+    // "proseWrap": "preserve" // 改行位置を変更しない
+    // "proseWrap": "never" // 全ての改行を削除する
+  },
+
+  // deno benchコマンド設定
+  "bench": {
+    // ベンチマーク対象に含めるファイル
+    "include": ["./functions/"],
+    // ベンチマーク対象から除外するファイル
+    "exclude": ["./exclude/"]
+  },
+
+  // deno testコマンド設定
+  "test": {
+    // テスト対象に含めるファイル
+    "include": ["./functions/"],
+    // テスト対象から除外するファイル
+    "exclude": ["./exclude/"]
+  },
+
+  // フォーマッター、リンター、テスト、ベンチマーク等全てにおいて無視されるファイル
+  "exclude": ["./node_modules/"],
+
+  // npmライブラリの保存場所をnode_modulesディレクトリにするかどうか
+  // trueにすると、実行時に--node-modules-dirフラグを渡したときと同様の挙動になる
+  "nodeModulesDir": false,
+
+  // ロックファイル(deno.lock)を生成するかどうか
+  "lock": true
+}

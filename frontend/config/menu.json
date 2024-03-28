@@ -1,0 +1,33 @@
+{
+  "main": [
+    {
+      "name": "ニュース",
+      "url": "/"
+    },
+    {
+      "name": "編集長",
+      "url": "/about"
+    },
+    {
+      "name": "トピック",
+      "url": "",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "トピック",
+          "url": "/categories"
+        }
+      ]
+    }
+  ],
+  "footer": [
+    {
+      "name": "ニュース",
+      "url": "/"
+    },
+    {
+      "name": "編集長",
+      "url": "/about"
+    }
+  ]
+}

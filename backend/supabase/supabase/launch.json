@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        //debugの名称(任意)デバッグ開始ボタンのプルダウンメニューの選択肢に表示される
+        "name": "Deno",
+        "type": "pwa-node",
+        "request": "launch",
+        "cwd": "${workspaceFolder}",
+        "runtimeExecutable": "deno",
+        "runtimeArgs": ["run", "--unstable", "--inspect-brk", "-A", "${file}"],
+        //tasks.jsonで定義したtaskにリンクする
+        //デバッグ実行時のコンパイルチェックが重いときはコメントアウト
+        //そのかわりコンパイルチェックは自前でコマンドラインでtscコマンドで実行する
+        "preLaunchTask": "Compile TypeScript",
+        "attachSimplePort": 9229
+      }
+    ]
+  }

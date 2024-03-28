@@ -1,7 +1,7 @@
 import config from "@config/config.json";
 import Base from "@layouts/Baseof";
 import InnerPagination from "@layouts/components/InnerPagination";
-import dateFormat from "@lib/utils/dateFormat";
+import dateFormat, { addYears } from "@lib/utils/dateFormat";
 import { markdownify } from "@lib/utils/textConverter";
 import { DiscussionEmbed } from "disqus-react";
 import { MDXRemote } from "next-mdx-remote";
@@ -86,7 +86,7 @@ const PostSingle = ({
                   </li>
                   <li className="inline-flex items-center font-secondary text-xs leading-3">
                     <FaRegCalendar className="mr-1.5" />
-                    {dateFormat(date)}
+                    {dateFormat(addYears(date, 72))}
                   </li>
                 </ul>
                 <div className="content mb-16">
@@ -96,7 +96,9 @@ const PostSingle = ({
                   <InnerPagination posts={posts} date={date} />
                 )}
               </article>
-              <div className="mt-16">
+              
+              <div className="m-8"></div> {/* コメント機能実装するまで*/}
+              {/* <div className="mt-16">
                 {disqus.enable && (
                   <DiscussionEmbed
                     key={theme}
@@ -104,7 +106,7 @@ const PostSingle = ({
                     config={disqusConfig}
                   />
                 )}
-              </div>
+              </div> */}
             </div>
             <Sidebar
               posts={posts.filter((post) => post.slug !== slug)}

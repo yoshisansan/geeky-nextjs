@@ -1,0 +1,9 @@
+{
+  "imports": {
+    "http": "https://deno.land/std@0.168.0/http/server.ts",
+    "supabaseAdmin": "./_shared/supabaseAdmin.ts",
+    "supabaseClient": "./_shared/supabaseClient.ts",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2.7.1",
+    "dotenv": "https://deno.land/std/dotenv/mod.ts"
+  }
+}
